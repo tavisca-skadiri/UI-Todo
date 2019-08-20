@@ -1,0 +1,33 @@
+body{
+  margin: 0;
+  background-color: lightgray;
+}
+.tabs{
+
+}
+.tabs ul{
+  padding: 0px;
+  display: block;
+  list-style-type: none;
+  width: 180px;
+}
+.tabs li{
+  margin-bottom: 3px;
+  text-align: left;
+}
+.tabs li:hover a{
+  background-color: green;
+}
+.tabs li a{
+  display: block;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 4%;
+  border-radius: 9px;
+  background: #6c5a9d;
+}
+.hidden{
+  display: none;
+}
