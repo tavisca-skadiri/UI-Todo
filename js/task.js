@@ -1,7 +1,5 @@
-var taskArray = [];
-
+var taskArray = ["Sleep","Eat","Dance","Study"];
 function addTask(){
-    taskArray.push(task_name);
 	var editButton = document.createElement('input');
 	editButton.type = "button";
 	editButton.className = "btn";
@@ -19,7 +17,8 @@ function addTask(){
     var task_name = document.getElementById('task-name').value;
 	var task_list = document.getElementById('task-list');
     var new_row = task_list.insertRow(); 
-    new_row.insertCell(0).innerHTML = task_name;
+    var val = document.createTextNode(task_name); 
+    new_row.insertCell(0).appendChild(val); 
     new_row.insertCell(1).appendChild(editButton); 
     new_row.insertCell(2).appendChild(deleteButton); 
     document.getElementById('task-name').value = '';
@@ -31,19 +30,32 @@ function searchTask(value) {
         	var node = document.createElement('option'); 
 	        var val = document.createTextNode(taskArray[i]); 
     	    node.appendChild(val); 
-            document.getElementById('task-datalist').appendChild(node);
+            document.getElementById('task-datalist').appendChild(node); 
         } 
     } 
 }
 function editTask(taskbtn){
+    console.log(taskbtn);
+    taskbtn.value = "Save";
+    var task_name = taskbtn.parentNode.parentNode.getElementsByTagName('td')[0];
+    task_name.innerHTML = '';
+    var textbox = document.createElement('input');
+    textbox.type = "text";
+    textbox.className = "btn";
+    textbox.placeholder = "Edit task name";
+    task_name.appendChild(textbox);
+    taskbtn.onclick = function(){
+        var val = document.createTextNode(textbox.value); 
+        taskbtn.value = "Edit";
+        task_name.appendChild(val); 
+        task_name.removeChild(textbox);
+        taskbtn.onclick = function() {
+            editTask(this);
+        }
+    }
 }
 function deleteTask(taskbtn){
 	var task_list = document.getElementById('task-list');
-	var row_to_delete = taskbtn.parentNode.parentNode;
-	task_list.deleteRow(row_to_delete.rowIndex);
-	var task_name = taskbtn.parentNode.parentNode.getElementsByTagName('td')[0];
-	var index = taskArray.indexOf(task_name);
-    if (index > -1) {
-       taskArray.splice(index, 1);
-    }
+    var row_to_delete = taskbtn.parentNode.parentNode;
+    task_list.deleteRow(row_to_delete.rowIndex);
 }
