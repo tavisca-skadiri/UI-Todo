@@ -10,23 +10,24 @@
 	<div class="navbar">
 		<ul>
 			<!-- <li><a href="" class="logo"><img src="../images/todo.svg"></a></li> -->
-			<li><a href="#">Tab1</a></li>
-			<li><a href="#">Tab2</a></li>
-			<li><a href="#">Tab3</a></li>
-			<li><a href="https://www.google.com/">Google.com</a></li>
+			<li><a>Home</a></li>
+			<li><a>About</a></li>
+			<li><a>Logout</a></li>
 		</ul>
 	</div>
 	<div class="tabs">
 		<ul>
-			<li><a href="#" onclick="loadTab('todo');">Todo</a></li>
-			<li><a href="#" onclick="loadTab('profile')">Profile</a></li>
-			<li><a href="#" onclick="loadTab('settings')">Settings</a></li>
+			<li><a onclick="loadTab('todo');">Todo</a></li>
+			<li><a onclick="loadTab('profile')">Profile</a></li>
+			<li><a onclick="loadTab('settings')">Settings</a></li>
 		</ul>
 		<div>
 			<article id="todo">
 				<h3>Task List</h3>
 				<hr/>
-				<input type="text" id="task-name" placeholder="Search. . .">
+				<input type="text" list="task-datalist" id="task-name" placeholder="Search. . ." oninput="searchTask(this.value);">
+				<datalist id="task-datalist">
+	            </datalist>
 				<button onclick="addTask()">Add</button>
 				<table id="task-list">
 					<th>Task Name</th><th>Edit</th><th>Delete</th>
