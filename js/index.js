@@ -1,59 +1,26 @@
-body{
-	margin: 0;
-	background-color: lightgray;
+window.onload = function() {
+    document.getElementById('profile').style.display = 'none';
+    document.getElementById('settings').style.display = 'none';
 }
-a{
-	text-decoration: none;
-    color: white;
-}
-.navbar ul{
-	list-style-type: none; 
-	background-color: gray;
-	padding-right: 20px;
-	padding: 10px;
-	margin: 0;
-}
-.logo{
-	color: pink;
-	padding-right: 30px;
-}
-.navbar a{
-	font-size: 30px;
-}
-.navbar li{
-	display: inline;
-	padding-left: 20px;
-}
-.navbar a:hover {
-	color: purple;
-}
-.hidden{
-	display: none;
-}
-.hidden p{
-	text-align: center;
-}
-.dropbtn {
-  background-color: gray;
-  color: pink;
-  padding: 20px;
-  font-size: 16px;
-}
-.dropdown {
-  display: inline-block;
-  margin-left: 30px;
-}
-.dropdown-content {
-  display: none;
-}
-.dropdown-content a {
-  padding: 10px 10px;
-  background-color: gray;
-  display: block;
-}
-.dropdown-content a:hover {
-	color: purple;
-}
-.dropdown:hover .dropdown-content {
-	display: block;
+function loadTab(tabname){
+	var todotab = document.getElementById('todo');	
+	var profiletab = document.getElementById('profile');	
+	var settingstab = document.getElementById('settings');	
+	switch(tabname){
+		case "todo":
+			todotab.style.display = '';
+			profiletab.style.display = 'none';
+			settingstab.style.display = 'none';
+		break;		
+		case "profile":
+			profiletab.style.display = '';
+			todotab.style.display = 'none';
+			settingstab.style.display = 'none';
+		break;		
+		case "settings":
+			settingstab.style.display = '';
+			profiletab.style.display = 'none';
+			todotab.style.display = 'none';
+		break;		
+	}
 }

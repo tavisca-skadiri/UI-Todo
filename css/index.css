@@ -2,14 +2,47 @@ body{
   margin: 0;
   background-color: lightgray;
 }
-.tabs{
-
+.navbar ul{
+  list-style-type: none; 
+  background-color: #6b5d96;
+  padding-right: 20px;
+  padding: 10px;
+  margin: 0;
+}
+.navbar a{
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+.navbar li{
+  display: inline;
+  padding-left: 20px;
+}
+.navbar a:hover {
+  color: purple;
+}
+.logo{
+  color: pink;
+  padding-right: 30px;
+}
+.logo img{
+/*  max-height: 20px;
+  max-width: 70px;
+*/}
+.hidden{
+  display: none;
 }
 .tabs ul{
   padding: 0px;
+  margin: 0px;
   display: block;
   list-style-type: none;
+  float: left;
   width: 180px;
+}
+.tabs{
+  margin-top: 20px;
+  margin-left: 20px;
 }
 .tabs li{
   margin-bottom: 3px;
@@ -26,8 +59,19 @@ body{
   text-align: center;
   padding: 4%;
   border-radius: 9px;
-  background: #6c5a9d;
+  background-color: #6b5d96;
 }
-.hidden{
-  display: none;
+.tabs div{
+   display: block;
+   background: #efefef;
+   float:left;
+   width:60%;
+   min-height: 400px;
+   padding: 30px;
+   margin-left: 20px;
+   border-radius: 10px;
+}
+.tabs div article{
+   color: #000;
+   font-size:18px;   
 }

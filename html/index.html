@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UI Navbar and Dropdown</title>
+	<title>Todo App</title>
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<script type="text/javascript" src="../js/index.js"></script>
 </head>
 <body>
-	<div class="tabs">
+	<div class="navbar">
 		<ul>
-			<li><a href="#" onclick="document.getElementById('firstlink').style.display = 'block';">Todo</a></li>
-			<li><a href="#" onclick="document.getElementById('secondlink').style.display = 'block';">User</a></li>
-			<li><a href="#" onclick="document.getElementById('thirdlink').style.display = 'block';">Settings</a></li>
+			<!-- <li><a href="" class="logo"><img src="../images/todo.svg"></a></li> -->
+			<li><a href="#">Tab1</a></li>
+			<li><a href="#">Tab2</a></li>
+			<li><a href="#">Tab3</a></li>
+			<li><a href="https://www.google.com/">Google.com</a></li>
 		</ul>
 	</div>
-	<div class="hidden" id="firstlink">
-		<p>First Link</p>
-	</div>
-	<div class="hidden" id="secondlink">
-		<p>Second Link</p>
-	</div>
-	<div class="hidden" id="thirdlink">
-		<p>Third Link</p>
+	<div class="tabs">
+		<ul>
+			<li><a href="#" onclick="loadTab('todo');">Todo</a></li>
+			<li><a href="#" onclick="loadTab('profile')">Profile</a></li>
+			<li><a href="#" onclick="loadTab('settings')">Settings</a></li>
+		</ul>
+		<div>
+			<article id="todo">
+				<h3>Task List</h3>
+				<hr/>
+				<input type="text" placeholder="Search. . .">
+				<button>Add</button>
+				
+			</article>
+			<article id="profile">
+				<h3>Profile</h3>
+				<hr/>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>			
+			</article>
+			<article id="settings">
+				<h3>Settings</h3>
+				<hr/>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+		</div>
 	</div>
 </body>
 </html>
