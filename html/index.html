@@ -4,6 +4,7 @@
 	<title>Todo App</title>
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<script type="text/javascript" src="../js/index.js"></script>
+	<script type="text/javascript" src="../js/task.js"></script>
 </head>
 <body>
 	<div class="navbar">
@@ -25,9 +26,11 @@
 			<article id="todo">
 				<h3>Task List</h3>
 				<hr/>
-				<input type="text" placeholder="Search. . .">
-				<button>Add</button>
-				
+				<input type="text" id="task-name" placeholder="Search. . .">
+				<button onclick="addTask()">Add</button>
+				<table id="task-list">
+					<th>Task Name</th><th>Edit</th><th>Delete</th>
+				</table>	
 			</article>
 			<article id="profile">
 				<h3>Profile</h3>
