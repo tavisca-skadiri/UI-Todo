@@ -1,15 +1,27 @@
 var taskArray = ["Sleep","Eat","Dance","Study"];
+
+function callGoogleApi(item){
+    var displaySuggestions = function(predictions, status) {
+        if (status != google.maps.places.PlacesServiceStatus.OK) {
+            alert(status);
+        }
+        predictions.forEach(function(prediction) {
+            taskArray.push(prediction.description);
+        });
+    };
+    var service = new google.maps.places.AutocompleteService();
+    service.getQueryPredictions({ input: item}, displaySuggestions);
+}
+
 function addTask(){
 	var editButton = document.createElement('input');
 	editButton.type = "button";
-	editButton.className = "btn";
 	editButton.value = "Edit";
     editButton.onclick = function() {
 		editTask(this);
     }
     var deleteButton = document.createElement('input');
 	deleteButton.type = "button";
-	deleteButton.className = "btn";
 	deleteButton.value = "Delete";
 	deleteButton.onclick = function() {
 		deleteTask(this);
@@ -24,6 +36,7 @@ function addTask(){
     document.getElementById('task-name').value = '';
 }
 function searchTask(value) { 
+    //callGoogleApi(value);
     document.getElementById('task-datalist').innerHTML = ''; 
  	for (var i = 0; i<taskArray.length; i++) { 
      	if(((taskArray[i].toLowerCase()).indexOf(value.toLowerCase()))>-1) { 

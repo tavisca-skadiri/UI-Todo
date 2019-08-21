@@ -3,6 +3,7 @@
 <head>
 	<title>Todo App</title>
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDySjeAwl42k_JUdwccdZ2d-rbcrFwrLE&libraries=places&callback=initService" async defer></script>
 	<script type="text/javascript" src="../js/index.js"></script>
 	<script type="text/javascript" src="../js/task.js"></script>
 </head>
@@ -30,7 +31,7 @@
 	            </datalist>
 				<button onclick="addTask()">Add</button>
 				<table id="task-list">
-					<th>Task Name</th><th>Edit</th><th>Delete</th>
+					<th>Task</th><th colspan="2">Actions</th>
 				</table>	
 			</article>
 			<article id="profile">
