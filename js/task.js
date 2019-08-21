@@ -1,6 +1,7 @@
 var taskArray = [];
 
 function addTask(){
+    taskArray.push(task_name);
 	var editButton = document.createElement('input');
 	editButton.type = "button";
 	editButton.className = "btn";
@@ -22,7 +23,6 @@ function addTask(){
     new_row.insertCell(1).appendChild(editButton); 
     new_row.insertCell(2).appendChild(deleteButton); 
     document.getElementById('task-name').value = '';
-    taskArray.push(task_name);
 }
 function searchTask(value) { 
     document.getElementById('task-datalist').innerHTML = ''; 
@@ -31,14 +31,19 @@ function searchTask(value) {
         	var node = document.createElement('option'); 
 	        var val = document.createTextNode(taskArray[i]); 
     	    node.appendChild(val); 
-            document.getElementById('task-datalist').appendChild(node); 
+            document.getElementById('task-datalist').appendChild(node);
         } 
     } 
 }
-function editTask(){
-	alert(this);
+function editTask(taskbtn){
 }
-function deleteTask(task){
+function deleteTask(taskbtn){
 	var task_list = document.getElementById('task-list');
-	task_list.deleteRow(task.parentNode.parentNode.rowIndex);
+	var row_to_delete = taskbtn.parentNode.parentNode;
+	task_list.deleteRow(row_to_delete.rowIndex);
+	var task_name = taskbtn.parentNode.parentNode.getElementsByTagName('td')[0];
+	var index = taskArray.indexOf(task_name);
+    if (index > -1) {
+       taskArray.splice(index, 1);
+    }
 }
