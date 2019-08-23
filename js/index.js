@@ -1,6 +1,7 @@
 window.onload = function() {
     document.getElementById('profile').style.display = 'none';
-    document.getElementById('settings').style.display = 'none';
+    document.getElementById('settings').style.display = 'none';    
+    callTodoApi();
 }
 function loadTab(tabname){
 	var todotab = document.getElementById('todo');	

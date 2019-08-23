@@ -24,12 +24,11 @@
 		</ul>
 		<div>
 			<article id="todo">
-				<h3>Task List</h3>
-				<hr/>
+				<h3>Task List<button onclick="addTask()">Add</button>
 				<input type="text" list="task-datalist" id="task-name" placeholder="Search. . ." oninput="searchTask(this.value);">
+				</h3><hr/>
 				<datalist id="task-datalist">
 	            </datalist>
-				<button onclick="addTask()">Add</button>
 				<table id="task-list">
 					<th>Task</th><th colspan="2">Actions</th>
 				</table>	
