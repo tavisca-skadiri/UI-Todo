@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo App</title>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDySjeAwl42k_JUdwccdZ2d-rbcrFwrLE&libraries=places&callback=initService" async defer></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+	<script type="text/javascript" src="../js/task.js"></script>
+</head>
+<body>
+	<div class="navbar">
+		<ul>
+			<!-- <li><a href="" class="logo"><img src="../images/todo.svg"></a></li> -->
+			<li><a>Home</a></li>
+			<li><a>About</a></li>
+			<li><a>Logout</a></li>
+		</ul>
+	</div>
+	<div class="tabs">
+		<ul>
+			<li><a onclick="loadTab('todo');">Todo</a></li>
+			<li><a onclick="loadTab('profile')">Profile</a></li>
+			<li><a onclick="loadTab('settings')">Settings</a></li>
+		</ul>
+		<div>
+			<article id="todo">
+				<h3>Task List<button onclick="addTask()">Add</button>
+				<input type="text" list="task-datalist" id="task-name" placeholder="Search. . ." oninput="searchTask(this.value);">
+				</h3><hr/>
+				<datalist id="task-datalist">
+	            </datalist>
+				<table id="task-list">
+					<th>Task</th><th colspan="2">Actions</th>
+				</table>	
+			</article>
+			<article id="profile">
+				<h3>Profile</h3>
+				<hr/>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>			
+			</article>
+			<article id="settings">
+				<h3>Settings</h3>
+				<hr/>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</article>
+		</div>
+	</div>
+</body>
+</html>
